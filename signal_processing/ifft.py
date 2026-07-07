@@ -2,7 +2,8 @@ import cmath
 
 def ifft_2(x):
     """
-    
+    Fungsi IFFT untuk menghitung Radix-2.
+    Jumlah data berupa pangkat dua.
     """
     N = len(x)
     if N == 1:
@@ -19,7 +20,8 @@ def ifft_2(x):
 
 def ifft_3(x):
     """
-    
+    Fungsi IFFT untuk menghitung Radix-3.
+    Jumlah data berupa pangkat dua.
     """
     N = len(x)
     if N == 1:
@@ -40,7 +42,8 @@ def ifft_3(x):
 
 def ifft_4(x):
     """
-    
+    Fungsi IFFT untuk menghitung Radix-4.
+    Jumlah data berupa pangkat dua.
     """
     N = len(x)
     if N == 1:
@@ -63,7 +66,7 @@ def ifft_4(x):
 
 def ifft(x, redix = 2):
     """
-    
+    Fungsi IFFT untuk menghitung
     """
     if redix == 2:
         output = ifft_2(x)

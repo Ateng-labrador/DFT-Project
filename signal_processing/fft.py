@@ -2,7 +2,8 @@ import cmath
 
 def fft_2(x):
     """
-    
+    Fungsi FFT untuk menghitung Radix-2.
+    Jumlah data berupa pangkat dua.
     """
     N = len(x)
     if N == 1:
@@ -19,7 +20,8 @@ def fft_2(x):
 
 def fft_3(x):
     """
-    
+    Fungsi FFT untuk menghitung Radix-3.
+    Jumlah data berupa pangkat dua.
     """
     N = len(x)
     if N == 1:
@@ -40,7 +42,8 @@ def fft_3(x):
 
 def fft_4(x):
     """
-    
+    Fungsi FFT untuk menghitung Radix-4.
+    Jumlah data berupa pangkat dua.
     """
     N = len(x)
     if N == 1:

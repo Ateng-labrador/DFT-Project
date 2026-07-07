@@ -12,6 +12,10 @@ f = 100
 fs = 1024
 N = 1024
 
+
+# beresin di sumbu y
+# pahamin frekuensi batas dari dft dan euler
+
 t = np.arange(N) / fs
 
 x = (A1 * np.sin(2 * np.pi * f * t) + 

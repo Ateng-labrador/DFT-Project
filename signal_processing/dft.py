@@ -3,7 +3,7 @@ import cmath
 
 def widlet(N):
     """
-    Make Widle Matriks
+    Membuat Widle Matriks
     """
     res = []
     for k in range(N):
@@ -15,6 +15,9 @@ def widlet(N):
     return res
 
 def dft(x):
+    """
+    Fungsi untuk menghitung dft
+    """
     widle_matriks = widlet(len(x))
     res = [0] * len(x)
     for k in range(len(x)):
