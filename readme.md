@@ -16,19 +16,19 @@ image compression.This project provides any implementation from any FFT like Coo
 from signal_processing import fft
 import numpy as np
 
-# Buat sinyal sample
+# make simple signa
 x = np.array([1, 2, 3, 4, 5, 6, 7, 8], dtype=complex)
 
-# Hitung FFT menggunakan Cooley-Tukey (Radix-2)
+# calculation FFT using Cooley-Tukey (Radix-2)
 X = fft.fft(x)
 print("FFT Result:", X)
 
-# Atau gunakan Bluestein (support ukuran arbitrary)
+# or use Bluestein
 X_bluestein = fft.bluestein(x)
 print("Bluestein Result:", X_bluestein)
 ```
 
-## 📊 Algoritma yang Diimplementasikan
+## Algorithms implementation
 
 | Algoritma | Kompleksitas | Catatan |
 |-----------|--------------|--------|
