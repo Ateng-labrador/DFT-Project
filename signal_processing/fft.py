@@ -5,8 +5,7 @@ from signal_processing import ifft
 
 def fft_2(x):
     """
-    Fungsi FFT untuk menghitung Radix-2.
-    Jumlah data berupa pangkat dua.
+    Function to calculation FFT(cooley - tookey) Radix-2
     """
     N = len(x)
     if N == 1:
@@ -23,8 +22,7 @@ def fft_2(x):
 
 def fft_3(x):
     """
-    Fungsi FFT untuk menghitung Radix-3.
-    Jumlah data berupa pangkat dua.
+    Function to calculation FFT(cooley - tookey) Radix-3
     """
     N = len(x)
     if N == 1:
@@ -45,8 +43,7 @@ def fft_3(x):
 
 def fft_4(x):
     """
-    Fungsi FFT untuk menghitung Radix-4.
-    Jumlah data berupa pangkat dua.
+    Function to calculation FFT(cooley - tookey) Radix-4
     """
     N = len(x)
     if N == 1:
@@ -69,7 +66,7 @@ def fft_4(x):
 
 def fft(x, radix = 2):
     """
-    Fungsi Untuk melakukan kalkulasi fft
+    Function to calculation FFT
     """
     if radix == 2:
         return fft_2(x)
@@ -83,7 +80,7 @@ def fft(x, radix = 2):
 
 def bluestein(a):
   """
-  
+  Function to calculation fft with bluestein algorithm
   """
   n = len(a)
   xi = cmath.exp(1j * 2 * cmath.pi / n)
@@ -125,7 +122,7 @@ def rader(n):
 
 def fft2(image):
     """
-    Fungsi untuk menghitung FFT 2D menggunakan algoritma FFT Radix
+    Function to calculation FFT 2D Cooley-Tukey
     """
     res = []
     for row in image:
@@ -148,8 +145,8 @@ def fft2(image):
 
 def bluestein2d(image):
     """
-    Fungsi untuk menghitung FFT 2D menggunakan algoritma Bluestein.
-    Menerapkan Bluestein per baris dan per kolom.
+    Function to calculation FFT 2D using bulestein
+    Algorithm
     """
     res = []
     for row in image:
@@ -174,4 +171,3 @@ def bluestein2d(image):
 
 def rader2d(n):
     pass
-
