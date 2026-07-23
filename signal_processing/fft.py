@@ -1,4 +1,5 @@
 import cmath
+from signal_processing.helper import *
 import math
 from signal_processing import ifft
 
@@ -116,8 +117,43 @@ def bluestein(a):
   return dft
 
 
-def rader(n):
-    pass
+def rader(x):
+    N = len(x)
+    if is_prime(N) == True:
+        # Convert input to complex for proper FFT computation
+        x = [complex(val) for val in x]
+        
+        # Calculate DC component (sum of all elements)
+        dc = sum(x)
+        
+        g = PrimitifRoot(N)
+        
+        # Create reordered sequence using primitive root
+        a = [x[pow(g, q, N)] for q in range(N - 1)]
+        
+        # Create impulse response kernel
+        # b[q] = W^(g^(-q)) where W = e^(-2πi/N)
+        b = [cmath.exp(-1j * 2 * cmath.pi * pow(g, -q-1, N) / N) for q in range(N - 1)]
+        
+        # Use Bluestein because N-1 may not be power of 2
+        A_freq = bluestein(a)
+        B_freq = bluestein(b)
+        
+        # Convolution in frequency domain
+        Y_freq = [A_freq[i] * B_freq[i] for i in range(N - 1)]
+        
+        y = ifft.ifft(Y_freq)
+        
+        # Reconstruct output
+        result = [0] * N
+        result[0] = dc
+        for p in range(N - 1):
+            k = pow(g, p, N)
+            result[k] = dc + y[p]
+        pass
+    else:
+        raise IndexError("Length For Data must prime number")
+    
 
 
 def fft2(image):
@@ -154,10 +190,10 @@ def bluestein2d(image):
             res.append(bluestein(list(row)))
         else:
             res.append(bluestein(row.tolist()))
-    
+
     N = len(res)
     M = len(res[0])
-
+ 
     result = [[0+0j] * M for _ in range(N)]
 
     for col in range(M):
