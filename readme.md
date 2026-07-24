@@ -13,7 +13,7 @@ image compression.This project provides any implementation from any FFT like Coo
 ## Example
 
 ```python
-from signal_processing import fft
+from fftModule import fft
 import numpy as np
 
 # make simple signa
@@ -30,10 +30,10 @@ print("Bluestein Result:", X_bluestein)
 
 ## Algorithms implementation
 
-| Algoritma | Kompleksitas | Catatan |
+| Algoritma | Complexity | Note |
 |-----------|--------------|--------|
-| DFT | O(n²) | Direct method, slow tapi accurate |
-| FFT (Radix-2) | O(n log n) | Cooley-Tukey, untuk n = 2^k |
+| DFT | O(n²) | Direct method, slow but accurate |
+| FFT (Radix-2) | O(n log n) | Cooley-Tukey, for n = 2^k |
 | FFT (Radix-3/4) | O(n log n) | Cooley-Tukey variant |
-| Bluestein | O(n log n) | Arbitrary size, menggunakan Cooley-Tukey internally |
+| Bluestein | O(n log n) | Arbitrary size, use Cooley-Tukey internally |
 | IFFT | O(n log n) | Inverse transform |
